@@ -3,6 +3,7 @@ import { pick } from "lodash"
 import { IBM_Plex_Mono, Inter } from "next/font/google"
 import { notFound } from "next/navigation"
 import { getMessages, setRequestLocale } from "next-intl/server"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import { Lang } from "@/lib/types"
 
@@ -80,6 +81,7 @@ export default async function LocaleLayout(props: {
           <BaseLayout lastDeployLocaleTimestamp={lastDeployLocaleTimestamp}>
             {children}
           </BaseLayout>
+          <SpeedInsights />
         </Providers>
       </body>
     </html>
